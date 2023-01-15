@@ -1,0 +1,102 @@
+[class^="intro__tilt"] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-color: var(--color-main);
+    clip-path: polygon(100% 90%, 100% 100%, 0 100%, 0 0);
+  }
+.intro__tilt--flip {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 90%);
+  opacity: 0.5;
+}
+/* 핸드폰, 테블릿 사이즈 */
+@media (max-width: 768px) {
+    /* Intro 배경 */
+    .intro {
+      height: 100vh;
+      background-image: url(../images/intro-bg.jpg); 
+      background-size: cover;
+      background-position: center;
+    }
+    /* Intro 검정색 배경 */
+    .intro__dark {
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.65);
+    }
+    /* Intro 타이틀 */
+    .intro__type {
+      padding: 35vh 0;
+      display: grid;
+      justify-content: center; /* grid 중앙 정렬 */
+      text-align: center;  /* 글씨 가운데정렬 */
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: white;
+    }
+    .intro__type > p:first-child{
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+    .intro__type > p:nth-child(2){
+      grid-column: 1 / 2;
+      grid-row: 2 / 3
+    }
+    .intro__type > p:nth-child(3){
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    
+    @keyframes blink {
+      from { opacity: 0; }
+      to { opacity: 1; }
+      }
+    .intro__type > p:nth-child(3) {
+      animation-name: blink;             /* 애니메이션 이름 */
+      animation-duration: 0.8s;          /* 0.8초 간 실행 */
+      animation-iteration-count: infinite; /* 무한반복 */
+    }
+
+
+  }
+
+ /* 노트북 사이즈 */
+@media (min-width: 769px) {
+  /* Intro 배경 */
+  .intro {
+    position: relative;
+    width: 100vw;
+    height: 35vh;
+    background-image: url(../images/intro-bg.jpg); 
+    background-size: cover;
+    background-position: center;
+  }
+  /* Intro 검정색 배경 */
+  .intro__dark {
+    width: 100vw;
+    height: 35vh;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  /* Intro 타이틀 */
+  .intro__type {
+    height: 28vh;
+    display: flex;            
+    justify-content: center;  /* 가로 가운데 정렬 */
+    align-items: center;      /* 세로 가운데 정렬 */
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+  }
+  @keyframes blink {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    }
+  .intro__type > p:nth-child(3) {
+    animation-name: blink;             /* 애니메이션 이름 */
+    animation-duration: 0.8s;          /* 0.8초 간 실행 */
+    animation-iteration-count: infinite; /* 무한반복 */
+  }
+
+
+}
